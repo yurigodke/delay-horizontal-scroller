@@ -2,11 +2,13 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
-    "./index.js"
+    "./src/main.js"
   ],
   output: {
-    filename: "bundle.js",
-    path: __dirname + "/src"
+    filename: "index.js",
+    path: __dirname,
+    library: "HorizontalScroller",
+    libraryTarget: "umd"
   },
   module: {
     rules: [{
@@ -15,7 +17,7 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['env']
+          presets: ['es2015']
         }
       }
     },
