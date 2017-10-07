@@ -1,11 +1,15 @@
 {
-  "name": "horizontal-scroller",
+  "name": "delay-horizontal-scroller",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurigodke/delay-horizontal-scroller.git"
   },
   "keywords": [
     "scroll",
