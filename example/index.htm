@@ -4,48 +4,92 @@
     <meta charset="utf-8">
     <title>Horizontal Scroller - Example</title>
     <style media="screen">
+      body {
+        font-family: Verdana, Geneva, sans-serif;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin: 30px 50px;
+      }
+
       .scrollerContainer {
         margin: 0 50px;
       }
+
       .scrollerItem {
         width: 300px;
         height: 400px;
-        background: #666;
         margin: 0 10px;
+        white-space: normal;
+      }
+
+      .scrollerItemImage {
+        border-radius: 10px;
+      }
+
+      .scrollerItemDelay {
+        font-size: 20px;
+        font-weight: bold;
+        color: #358A56;
+        margin: 10px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px #358A56 solid;
+      }
+
+      .scrollerItemDelay2 {
+        font-size: 14px;
+        color: #57554A;
       }
     </style>
   </head>
   <body>
+    <h1>Horizontal Scroller Example</h1>
     <div class="scrollerContainer">
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
       <div class="scrollerItem">
+        <img class="scrollerItemImage" src="http://lorempixel.com/300/225/abstract/" alt="">
         <div class="scrollerItemDelay">Delay Teste</div>
-      </div>
-      <div class="scrollerItem">
-        <div class="scrollerItemDelay">Delay Teste</div>
+        <p class="scrollerItemDelay2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non turpis lobortis augue volutpat tempus at non lacus.</p>
       </div>
     </div>
 
@@ -58,6 +102,10 @@
           {
             selector: ".scrollerItemDelay",
             delayTime: 20
+          },
+          {
+            selector: ".scrollerItemDelay2",
+            delayTime: 15
           }
         ]
       });

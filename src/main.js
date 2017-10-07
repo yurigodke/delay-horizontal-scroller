@@ -24,7 +24,7 @@ export default class HorizontalScroller {
     this.vars = {
       "scrollValue": 0,
       "oldScrollValue": 0,
-      "delayCount": 0
+      "delayCount": []
     }
 
     this.raf = Raf;
@@ -94,7 +94,7 @@ export default class HorizontalScroller {
     var delayValue = this.vars.oldScrollValue - this.vars.scrollValue;
 
     for(var i=0;i<delayItem.length;i++){
-      this._delay(delayItem[0], delayValue);
+      this._delay(delayItem[i], i, delayValue);
     }
 
     this.vars.oldScrollValue = this.vars.scrollValue;
@@ -102,11 +102,10 @@ export default class HorizontalScroller {
     this.raf(this._animate);
   }
 
-  _delay(options, value) {
+  _delay(options, index, value) {
     var delayItens = document.querySelectorAll(options.selector)
-
     if(value){
-      this.vars.delayCount = 0;
+      this.vars.delayCount[index] = 0;
       for(var i=0;i<delayItens.length;i++){
         Object.assign(delayItens[i].style, {
           "transform": `translateX(${value}px)`,
@@ -114,10 +113,10 @@ export default class HorizontalScroller {
         });
       }
     } else {
-      this.vars.delayCount++;
+      this.vars.delayCount[index] += 1;
     }
 
-    if(this.vars.delayCount == options.delayTime){
+    if(this.vars.delayCount[index] == options.delayTime){
       for(var i=0;i<delayItens.length;i++){
         Object.assign(delayItens[i].style, {
           "transform": `translateX(${value}px)`
