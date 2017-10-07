@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: "index.js",
     path: __dirname,
-    library: "HorizontalScroller",
+    library: "DelayHorizontalScroller",
     libraryTarget: "umd"
   },
   module: {

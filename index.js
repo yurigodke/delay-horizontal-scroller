@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["HorizontalScroller"] = factory();
+		exports["DelayHorizontalScroller"] = factory();
 	else
-		root["HorizontalScroller"] = factory();
+		root["DelayHorizontalScroller"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -105,9 +105,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var HorizontalScroller = function () {
-  function HorizontalScroller(opts) {
-    _classCallCheck(this, HorizontalScroller);
+var DelayHorizontalScroller = function () {
+  function DelayHorizontalScroller(opts) {
+    _classCallCheck(this, DelayHorizontalScroller);
 
     this._bind();
 
@@ -139,7 +139,7 @@ var HorizontalScroller = function () {
     this._setEvents();
   }
 
-  _createClass(HorizontalScroller, [{
+  _createClass(DelayHorizontalScroller, [{
     key: "_setItemPosition",
     value: function _setItemPosition() {
       var _this = this;
@@ -240,10 +240,10 @@ var HorizontalScroller = function () {
     }
   }]);
 
-  return HorizontalScroller;
+  return DelayHorizontalScroller;
 }();
 
-exports.default = HorizontalScroller;
+exports.default = DelayHorizontalScroller;
 
 /***/ }),
 /* 2 */

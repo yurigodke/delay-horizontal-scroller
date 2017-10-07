@@ -1,7 +1,7 @@
 import VirtualScroll from "virtual-scroll";
 import Raf from "raf"
 
-export default class HorizontalScroller {
+export default class DelayHorizontalScroller {
   constructor(opts) {
     this._bind();
 
