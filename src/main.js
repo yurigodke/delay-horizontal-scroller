@@ -18,7 +18,7 @@ export default class DelayHorizontalScroller {
     }
 
     this.virtualScroll = new VirtualScroll({
-      "limitInertia": true
+      "passive": false
     });
 
     this.vars = {
@@ -69,7 +69,7 @@ export default class DelayHorizontalScroller {
   }
 
   _onScroll(e) {
-    var deltaY = (e.deltaY)*-1;
+    var deltaY = e.deltaY;
 
     this.vars.scrollValue += deltaY;
 

@@ -124,7 +124,7 @@ var DelayHorizontalScroller = function () {
     };
 
     this.virtualScroll = new _virtualScroll2.default({
-      "limitInertia": true
+      "passive": false
     });
 
     this.vars = {
@@ -182,7 +182,7 @@ var DelayHorizontalScroller = function () {
   }, {
     key: "_onScroll",
     value: function _onScroll(e) {
-      var deltaY = e.deltaY * -1;
+      var deltaY = e.deltaY;
 
       this.vars.scrollValue += deltaY;
 
