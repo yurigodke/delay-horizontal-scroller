@@ -42,7 +42,7 @@ export default class DelayHorizontalScroller {
 
     Object.assign(this.elements.roller.style, {
       "display": "table",
-      "transition": "all .5s ease-in-out"
+      "transition": "transform .5s ease-in-out"
     });
 
     Object.assign(this.elements.container.style, {
@@ -109,7 +109,7 @@ export default class DelayHorizontalScroller {
       for(var i=0;i<delayItens.length;i++){
         Object.assign(delayItens[i].style, {
           "transform": `translateX(${value}px)`,
-          "transition": "all .5s ease-in-out"
+          "transition": "transform .5s ease-in-out"
         });
       }
     } else {
