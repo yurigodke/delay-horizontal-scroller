@@ -8,7 +8,8 @@ export default class DelayHorizontalScroller {
     this.options = Object.assign({
 			container: opts.container,
 			item: opts.item,
-      delayItem: opts.delayItem || []
+      delayItem: opts.delayItem || [],
+      progressScroll: opts.progressScroll || function(){}
 		}, opts);
 
     this.elements = {
@@ -69,7 +70,10 @@ export default class DelayHorizontalScroller {
   }
 
   _onScroll(e) {
-    document.getElementById("logger").innerHTML = JSON.stringify(e);
+    var logger = document.getElementById("logger");
+    if(logger) {
+      logger.innerHTML = JSON.stringify(e);
+    }
     var deltaY = e.deltaY;
 
     this.vars.scrollValue += deltaY;
@@ -83,6 +87,9 @@ export default class DelayHorizontalScroller {
     } else if(this.vars.scrollValue > 0) {
       this.vars.scrollValue = 0;
     }
+
+    var scrollPercent = Math.abs(this.vars.scrollValue/widthScroll);
+    this.options.progressScroll(scrollPercent)
   }
 
   _animate() {

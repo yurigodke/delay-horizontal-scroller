@@ -114,7 +114,8 @@ var DelayHorizontalScroller = function () {
     this.options = Object.assign({
       container: opts.container,
       item: opts.item,
-      delayItem: opts.delayItem || []
+      delayItem: opts.delayItem || [],
+      progressScroll: opts.progressScroll || function () {}
     }, opts);
 
     this.elements = {
@@ -182,7 +183,10 @@ var DelayHorizontalScroller = function () {
   }, {
     key: "_onScroll",
     value: function _onScroll(e) {
-      document.getElementById("logger").innerHTML = JSON.stringify(e);
+      var logger = document.getElementById("logger");
+      if (logger) {
+        logger.innerHTML = JSON.stringify(e);
+      }
       var deltaY = e.deltaY;
 
       this.vars.scrollValue += deltaY;
@@ -196,6 +200,9 @@ var DelayHorizontalScroller = function () {
       } else if (this.vars.scrollValue > 0) {
         this.vars.scrollValue = 0;
       }
+
+      var scrollPercent = Math.abs(this.vars.scrollValue / widthScroll);
+      this.options.progressScroll(scrollPercent);
     }
   }, {
     key: "_animate",
