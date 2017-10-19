@@ -69,6 +69,7 @@ export default class DelayHorizontalScroller {
   }
 
   _onScroll(e) {
+    document.getElementById("logger").innerHTML = JSON.stringify(e);
     var deltaY = e.deltaY;
 
     this.vars.scrollValue += deltaY;

@@ -182,6 +182,7 @@ var DelayHorizontalScroller = function () {
   }, {
     key: "_onScroll",
     value: function _onScroll(e) {
+      document.getElementById("logger").innerHTML = JSON.stringify(e);
       var deltaY = e.deltaY;
 
       this.vars.scrollValue += deltaY;
